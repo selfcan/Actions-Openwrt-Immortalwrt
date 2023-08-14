@@ -85,7 +85,7 @@ jobs:
       run: |
         cd openwrt
         make defconfig
-        #sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' ./target/linux/ramips/Makefile
+        sed -i 's/KERNEL_PATCHVER:=5.15/KERNEL_PATCHVER:=5.10/g' ./target/linux/ramips/Makefile
         echo "The branch is $REPO_BRANCH"
         cat ./target/linux/ramips/Makefile
         cat .config
