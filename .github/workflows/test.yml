@@ -32,7 +32,7 @@ jobs:
     - name: Prepare
       run: |
         # git clone -b mt7622 --single-branch --depth=1 https://github.com/padavanonly/immortalwrtARM immortalwrt
-        git clone -b mt7622 --single-branch https://github.com/padavanonly/immortalwrtARM immortalwrt
+        git clone -b master --single-branch https://github.com/padavanonly/immortalwrt.git immortalwrt
         cd immortalwrt/
         ./scripts/feeds update -a
         ./scripts/feeds install -a
