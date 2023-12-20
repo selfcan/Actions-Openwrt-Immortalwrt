@@ -5,7 +5,7 @@ on:
     branches: 
       - main
     paths:
-      - 'MT7622_18.06.config'
+      - 'HC5962-diff.config'
   workflow_dispatch:
 
 env:
@@ -36,7 +36,7 @@ jobs:
         cd immortalwrt/
         ./scripts/feeds update -a
         ./scripts/feeds install -a
-        cp ../MT7622_18.06.config ./.config
+        cp ../HC5962-diff.config ./.config
 
     - name: Compile the firmware
       id: compile
@@ -64,7 +64,7 @@ jobs:
       uses: actions/upload-artifact@main
       if: steps.organize.outputs.status == 'success' && !cancelled()
       with:
-        name: MT7622_18.06_immortalwrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
+        name: MT7621_b70_immortalwrt_firmware${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
     - name: Delete workflow runs
